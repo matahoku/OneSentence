@@ -10,6 +10,8 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->authorizeResource(Sentence::class, 'sentence');
+
     }
 
     public function index()
