@@ -3,5 +3,7 @@
 @section('title','記事一覧')
 
 @section('content')
-  @include('sentence_card')
+  @foreach($sentences as $sentence)
+    @include('sentence_card')
+  @endforeach
 @endsection

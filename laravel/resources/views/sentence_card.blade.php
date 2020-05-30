@@ -4,24 +4,24 @@
         <i class="fas fa-user-circle fa-3x mr-1"></i>
         <div>
           <div class="font-weight-bold">
-            ユーザー名
+            {{ $sentence->user->name }}
           </div>
           <div class="font-weight-lighter">
-            2020/2/1 12:00
+            {{ $sentence->created_at->format('Y/m/d H:i') }}
           </div>
         </div>
       </div>
       <div class="card-body row pt-0 pb-2">
         <div class="card-title h5" style=padding-right:30px>
-          記事タイトル
+          {{ $sentence->title }}
         </div>
         <div class="card-text">
-          記事本文aaaaaaaaaaaaaaaaaaaaaaaa
+          {{ $sentence->body }}
         </div>
       </div>
       <div class="card-body row pt-0 pb-1">
         <h3 id="rated-element" class="mr-2 mt-1" >総合評価</h3>
-        <div class="starability-result " data-rating="3" aria-description="rated-element"></div>
+        <div class="starability-result " data-rating="{{ $sentence->rating }}" aria-description="rated-element"></div>
       </div>
     </div>
   </div>

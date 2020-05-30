@@ -11,6 +11,7 @@ class TopController extends Controller
 {
     public function index()
     {
-      return view('index');
+      $sentences = Sentence::all()->sortByDesc('created_at');
+      return view('index', compact('sentences'));
     }
 }
