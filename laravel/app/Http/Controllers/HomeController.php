@@ -30,4 +30,23 @@ class HomeController extends Controller
 
        return redirect('/');
     }
+
+    public function edit(Sentence $sentence)
+    {
+        return view('edit', ['sentence'=> $sentence]);
+    }
+
+    public function update(Request $request, Sentence $sentence)
+    {
+        $sentence->fill($request->all())->save();
+        return redirect('/');
+    }
+
+    public function delete(Sentence $sentence)
+    {
+        $sentence->delete();
+        return redirect('/');
+    }
+
+
 }
