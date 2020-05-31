@@ -12,7 +12,6 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
         $this->authorizeResource(Sentence::class, 'sentence');
-
     }
 
     public function index(int $id)

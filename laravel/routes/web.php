@@ -3,6 +3,7 @@
 Auth::routes();
 //ゲストユーザーでもOK
 Route::get('/','TopController@index')->name('/');
+Route::get('/show/{id}','TopController@show')->name('show');
 
 //ログインユーザーのみ
 Route::get('/home/{id}', 'HomeController@index')->name('home');
