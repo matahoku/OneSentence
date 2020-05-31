@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Sentence;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -14,9 +15,10 @@ class HomeController extends Controller
 
     }
 
-    public function index()
+    public function index(int $id)
     {
-        return view('home');
+        $user = User::where('id',$id)->first();
+        return view('home', compact('user'));
     }
 
     public function create()

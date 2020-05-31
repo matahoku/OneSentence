@@ -1,23 +1,20 @@
 @extends('layouts.app')
 
+@section('title', "$user->name"."のページ")
+
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
+  <div class="container">
+    <div class="card mt-3">
+      <div class="card-body">
+        <div class="d-flex flex-row">
+          <a href="#" class="text-dark">
+            <i class="fas fa-user-circle fa-3x"></i>
+          </a>
         </div>
+        <h2 class="h5 card-title m-0">
+          <a href="" class="text-dark">{{ $user->name }}</a>
+        </h2>
+      </div>
     </div>
-</div>
+  </div>
 @endsection
