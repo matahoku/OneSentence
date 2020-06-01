@@ -3,7 +3,7 @@
 @section('title','記事登録')
 
 @section('content')
-  <div class="row justify-content-center container">
+  <div class="container">
     <div class="col-md-10">
       <h1>レビュー投稿ページ</h1>
       <form action="{{ route('store') }}" method="post">

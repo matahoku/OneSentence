@@ -4,9 +4,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import './bootstrap'
-import Vue from 'vue'
-import SentenceLike from './components/SentenceLike'
+ import './bootstrap'
+ import Vue from 'vue'
+ import SentenceLike from './components/SentenceLike'
 
 window.Vue = require('vue');
 
@@ -34,4 +34,4 @@ const app = new Vue({
     components: {
       SentenceLike,
     }
-});
+})

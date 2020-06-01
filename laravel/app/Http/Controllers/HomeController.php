@@ -51,5 +51,26 @@ class HomeController extends Controller
         return redirect('/');
     }
 
+    public function like(Request $request, Sentence $sentence)
+    {
+      $sentence->likes()->detach($request->user()->id);
+      $sentence->likes()->attach($request->user()->id);
+
+      return [
+          'id' => $sentence->id,
+          'countLikes' => $sentence->count_likes,
+      ];
+    }
+
+    public function unlike(Request $request, Sentence $sentence)
+    {
+        $sentence->likes()->detach($request->user()->id);
+
+        return [
+          'id' => $sentence->id,
+          'countLikes' => $sentence->count_likes,
+        ];
+    }
+
 
 }
