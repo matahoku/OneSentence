@@ -25,7 +25,7 @@ class HomeController extends Controller
        return view('create');
     }
 
-    public function store(Request $request, Sentence $sentence)
+    public function store(SentenceRequest $request, Sentence $sentence)
     {
        $sentence->fill($request->all());
        $sentence->user_id = $request->user()->id;

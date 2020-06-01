@@ -19,6 +19,13 @@
             </div>
 
             <div class="form-group">
+              <sentence-tags-input
+
+              >
+              </sentence-tags-Input>
+            </div>
+
+            <div class="form-group">
               <label>短い感想</label>
               <input class="form-control" type="text" name="body" value="{{ old('body') }}" placeholder="20文字以内で入力">
             </div>

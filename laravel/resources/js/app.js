@@ -7,6 +7,7 @@
  import './bootstrap'
  import Vue from 'vue'
  import SentenceLike from './components/SentenceLike'
+ import SentenceTagsInput from './components/SentenceTagsInput'
 
 window.Vue = require('vue');
 
@@ -33,5 +34,6 @@ const app = new Vue({
     el: '#app',
     components: {
       SentenceLike,
+      SentenceTagsInput,
     }
 })
