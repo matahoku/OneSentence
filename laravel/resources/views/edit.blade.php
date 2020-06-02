@@ -20,6 +20,14 @@
             </div>
 
             <div class="form-group">
+              <sentence-tags-input
+              :initial-tags='@json($tagNames ?? [])'
+              :autocomplete-items='@json($allTagNames ?? [])'
+              >
+              </sentence-tags-Input>
+            </div>
+
+            <div class="form-group">
               <label>短い感想</label>
               <input class="form-control" type="text" name="body" value="{{ $sentence->body }}" placeholder="20文字以内で入力">
             </div>

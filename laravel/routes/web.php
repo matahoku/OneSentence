@@ -5,6 +5,7 @@ Auth::routes();
 //ゲストユーザーでもOK
 Route::get('/','TopController@index')->name('/');
 Route::get('/show/{id}','TopController@show')->name('show');
+Route::get('/tag/{name}','TopController@tagShow')->name('tag');
 
 //ログインユーザーのみ
 Route::get('/home/{id}', 'HomeController@index')->name('home');

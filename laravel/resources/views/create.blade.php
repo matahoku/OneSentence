@@ -20,7 +20,7 @@
 
             <div class="form-group">
               <sentence-tags-input
-
+              :autocomplete-items='@json($allTagNames ?? [])'
               >
               </sentence-tags-Input>
             </div>

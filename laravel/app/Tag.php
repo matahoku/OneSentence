@@ -8,5 +8,17 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Tag extends Model
 {
-    
+    protected $fillable = [
+      'name',
+    ];
+
+    public function getHashtagAttribute(): string
+    {
+      return '#' . $this->name;
+    }
+
+    public function sentences(): BelongsToMany
+    {
+      return $this->belongsToMany('App\Sentence')->withTimestamps();
+    }
 }

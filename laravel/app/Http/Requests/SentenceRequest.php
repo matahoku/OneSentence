@@ -26,7 +26,7 @@ class SentenceRequest extends FormRequest
         return [
             'title' => 'required|max:20',
             'tags' => 'json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',
-            'body' => 'required|max:20'
+            'body' => 'required|max:20',
             'rating' => 'required',
         ];
     }
