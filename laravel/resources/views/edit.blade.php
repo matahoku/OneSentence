@@ -3,8 +3,8 @@
 @section('title','記事更新')
 
 @section('content')
-  <div class="row justify-content-center container">
-    <div class="col-md-10">
+  <div class=" container">
+    <div class="col-md-0">
       <h1>レビュー編集ページ</h1>
       <form action="{{ route('update', ['sentence' => $sentence]) }}" method="post">
         @csrf

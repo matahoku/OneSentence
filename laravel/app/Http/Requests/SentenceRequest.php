@@ -26,18 +26,22 @@ class SentenceRequest extends FormRequest
         return [
             'title' => 'required|max:20',
             'tags' => 'json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',
-            'body' => 'required|max:20',
+            'body' => 'required|max:30',
             'rating' => 'required',
         ];
     }
 
-    public function attributes()
+
+    public function messages()
     {
         return [
-          'title' => 'タイトル',
-          'tags' => 'タグ',
-          'body' => '本文',
-          'rating' => '評価',
+          'title.required' => 'タイトルを入力して下さい。',
+          'title.max' => 'タイトルは20文字以内で入力して下さい。',
+          'tags.regex' => 'タグでは「　(スペース)」 と 「/ 」は使用できません。',
+          'body.required' => '本文を入力して下さい。',
+          'body.max' => '本文は30文字以内で入力して下さい。',
+          'rating.requied' => '作品評価を選択して下さい。',
+
         ];
     }
 

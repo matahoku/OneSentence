@@ -34,6 +34,7 @@ class HomeController extends Controller
 
     public function store(SentenceRequest $request, Sentence $sentence)
     {
+
        $sentence->fill($request->all());
        $sentence->user_id = $request->user()->id;
        $sentence->save();

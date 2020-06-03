@@ -4,7 +4,7 @@
 
 @section('content')
   <div class="container">
-    <div class="col-md-10">
+    <div class="col-md-0">
       <h1>レビュー投稿ページ</h1>
       <form action="{{ route('store') }}" method="post">
         @csrf
@@ -14,7 +14,7 @@
             @include('error_show')
 
             <div class="form-group">
-              <label>タイトル</label>
+              <label>作品タイトル</label>
               <input class="form-control" type="text" name="title" value="{{ old('title') }}" placeholder="タイトルを入力">
             </div>
 
@@ -26,12 +26,12 @@
             </div>
 
             <div class="form-group">
-              <label>短い感想</label>
-              <input class="form-control" type="text" name="body" value="{{ old('body') }}" placeholder="20文字以内で入力">
+              <label>感想</label>
+              <input class="form-control" type="text" name="body" value="{{ old('body') }}" placeholder="30文字以内で入力">
             </div>
 
             <fieldset class="starability-slot">
-              <legend style="margin-bottom:0;">評価</legend>
+              <legend style="margin-bottom:0;">作品評価</legend>
                 <input type="radio" id="first-rate1" name="rating" value="1" />
                 <label for="first-rate1" title="Terrible">1 stars</label>
 
