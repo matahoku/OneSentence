@@ -1,18 +1,18 @@
 @extends('layouts.app')
 
-@section('title', "$user->name"."のページ")
+@section('title', $user->name . 'のいいねした記事')
 
 @section('content')
   <div class="container">
     @include('user')
     <ul class="nav nav-tabs nav-justified mt-3">
       <li class="nav-item">
-        <a href="{{ route('users.show', ['id' => $user->id]) }}" class="nav-link text-muted active">
+        <a href="{{ route('users.show', ['id' => $user->id]) }}" class="nav-link text-muted">
           全てのセンテンス
         </a>
       </li>
       <li class="nav-item">
-        <a href="{{ route('users.likes', ['id' => $user->id]) }}" class="nav-link text-muted">
+        <a href="{{ route('users.likes', ['id' => $user->id]) }}" class="nav-link text-muted active">
           いいね
         </a>
       </li>

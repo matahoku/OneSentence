@@ -4,17 +4,21 @@
 
 @section('content')
   <div class="container">
-    <div class="card mt-3">
-      <div class="card-body">
-        <div class="d-flex flex-row">
-          <a href="#" class="text-dark">
-            <i class="fas fa-user-circle fa-3x"></i>
-          </a>
-        </div>
-        <h2 class="h5 card-title m-0">
-          <a href="" class="text-dark">{{ $user->name }}</a>
-        </h2>
-      </div>
-    </div>
+    @include('user')
+    <ul class="nav nav-tabs nav-justified mt-3">
+      <li class="nav-item">
+        <a href="{{ route('users.show', ['id' => $user->id]) }}" class="nav-link text-muted active">
+          全ての記事
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ route('users.likes', ['id' => $user->id]) }}" class="nav-link text-muted">
+          いいね
+        </a>
+      </li>
+    </ul>
+    @foreach($sentences as $sentence)
+      @include('sentence_card')
+    @endforeach
   </div>
 @endsection

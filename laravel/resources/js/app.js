@@ -8,6 +8,7 @@
  import Vue from 'vue'
  import SentenceLike from './components/SentenceLike'
  import SentenceTagsInput from './components/SentenceTagsInput'
+ import FollowButton from './components/FollowButton'
 
 window.Vue = require('vue');
 
@@ -35,5 +36,6 @@ const app = new Vue({
     components: {
       SentenceLike,
       SentenceTagsInput,
+      FollowButton,
     }
 })

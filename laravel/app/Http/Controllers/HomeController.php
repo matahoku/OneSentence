@@ -19,7 +19,8 @@ class HomeController extends Controller
     public function index(int $id)
     {
       $user = User::where('id',$id)->first();
-      return view('home', compact('user'));
+      $sentences = $user->sentences->sortByDesc('created_at');
+      return view('home', ['user' => $user, 'sentences' => $sentences]);
     }
 
     public function create()
@@ -80,13 +81,13 @@ class HomeController extends Controller
 
     public function like(Request $request, Sentence $sentence)
     {
-      $sentence->likes()->detach($request->user()->id);
-      $sentence->likes()->attach($request->user()->id);
+        $sentence->likes()->detach($request->user()->id);
+        $sentence->likes()->attach($request->user()->id);
 
-      return [
+        return [
           'id' => $sentence->id,
           'countLikes' => $sentence->count_likes,
-      ];
+        ];
     }
 
     public function unlike(Request $request, Sentence $sentence)
@@ -99,5 +100,33 @@ class HomeController extends Controller
         ];
     }
 
+    public function follow(Request $request, String $name)
+    {
+        $user = User::where('name', $name)->first();
+
+        if ($user->id === $request->user()->id)
+        {
+            return abort('404', 'Cannot follow yourself.');
+        }
+
+        $request->user()->followings()->detach($user);
+        $request->user()->followings()->attach($user);
+
+        return ['name' => $name];
+    }
+
+    public function unfollow(Request $request, String $name)
+    {
+        $user = User::where('name', $name)->first();
+
+        if ($user->id === $request->user()->id)
+        {
+            return abort('404', 'Cannot follow yourself.');
+        }
+
+        $request->user()->followings()->detach($user);
+
+        return ['name' => $name];
+    }
 
 }
