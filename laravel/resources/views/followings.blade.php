@@ -12,7 +12,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="" class="nav-link text-muted">
+        <a href="{{ route('users.followers', ['id' => $user->id]) }}" class="nav-link text-muted">
           フォロワー
         </a>
       </li>

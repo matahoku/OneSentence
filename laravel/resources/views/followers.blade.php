@@ -7,12 +7,12 @@
   @include('user')
   <ul class="nav nav-tabs nav-justified mt-3">
     <li class="nav-item">
-      <a href="" class="nav-link text-muted ">
+      <a href="{{ route('users.followings', ['id' => $user->id]) }}" class="nav-link text-muted ">
         フォロー中
       </a>
     </li>
     <li class="nav-item">
-      <a href="{{  }}" class="nav-link text-muted active">
+      <a href="" class="nav-link text-muted active">
         フォロワー
       </a>
     </li>
