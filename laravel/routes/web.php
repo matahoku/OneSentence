@@ -27,3 +27,4 @@ Route::prefix('users')->name('users.')->group(function() {
     Route::put('/{name}/follow', 'HomeController@follow')->name('follow');
     Route::delete('/{name}/follow', 'HomeController@unfollow')->name('unfollow');
 });
+Route::delete('delete/user/{user}','UserController@userDelete')->name('userDelete');

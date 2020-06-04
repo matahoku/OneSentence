@@ -6,7 +6,7 @@
   <div class="container">
     <div class="card mt-3">
       <div class="card-body">
-        <h2 class="h4 card-title m-0">{{ $tag->hashtag }}</h2>
+        <h2 class="h4 card-title m-0 text-center">『 {{ $tag->hashtag }} 』の記事一覧</h2>
         <div class="card-text text-right">
           {{ $tag->sentences->count() }}件
         </div>
