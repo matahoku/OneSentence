@@ -22,8 +22,8 @@
               </button>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="">
-                <i class="fas fa-user-edit mr-1"></i>  ユーザー情報を編集する。
+              <a class="dropdown-item" href="{{ route('user.edit', ['user' => $user]) }}">
+                <i class="fas fa-user-edit mr-1"></i>  ユーザー情報を編集する
               </a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $user->id }}">
@@ -41,7 +41,7 @@
                   <span aria-hidden="true">×</span>
                 </button>
               </div>
-              <form method="POST" action="{{ route('userDelete',['user' => $user]) }}">
+              <form method="POST" action="{{ route('user.delete',['user' => $user]) }}">
                 @csrf
                 @method('DELETE')
                 <div class="modal-body text-center">
@@ -65,7 +65,7 @@
   </div>
   <div class="card-body pt-0 pb-0">
     <div class="card-text">
-      ここは自己紹介文です。
+      {{ $user->introduction }}
     </div>
   </div>
   <div class="card-body">

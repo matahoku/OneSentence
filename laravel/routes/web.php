@@ -1,6 +1,11 @@
 <?php
-//auth関連
+//ユーザー情報関連
 Auth::routes();
+Route::prefix('user')->name('user.')->group(function(){
+  Route::delete('/delete/{user}','UserController@delete')->name('delete');
+  Route::get('/edit/{user}','UserController@edit')->name('edit');
+  Route::patch('/edit/{user}/update','UserController@update')->name('update');
+});
 
 //ゲストユーザーでもOK
 Route::get('/','TopController@index')->name('/');
@@ -27,4 +32,3 @@ Route::prefix('users')->name('users.')->group(function() {
     Route::put('/{name}/follow', 'HomeController@follow')->name('follow');
     Route::delete('/{name}/follow', 'HomeController@unfollow')->name('unfollow');
 });
-Route::delete('delete/user/{user}','UserController@userDelete')->name('userDelete');
