@@ -28,9 +28,16 @@ class UserController extends Controller
     public function update(User $user, Request $request)
     {
       $post = $request->all();
+        if (isset($request->noImage)) {
+          $deleteImageName = $user->image;
+          $deletePath = storage_path() . '/app/public/images/' . $deleteImageName;
+          \File::delete($deletePath);
+          
+          $data = ['introduction' => $post['introduction'], 'image' => NULL];
+          $user->fill($data)->save();
 
+      } elseif ($request->hasFile('image')) {
           //以前の画像をストレージから削除
-      if ($request->hasFile('image')) {
           $deleteImageName = $user->image;
           $deletePath = storage_path() . '/app/public/images/' . $deleteImageName;
           \File::delete($deletePath);

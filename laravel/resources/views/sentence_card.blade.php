@@ -5,7 +5,7 @@
           @if ( isset($sentence->user->image))
             <img src="{{ asset('storage/images/'. $sentence->user->image) }}" class="pr-2 pt-1">
           @else
-            <i class="fas fa-user-circle fa-3x"></i>
+            <i class="fas fa-user-circle fa-3x pr-2 "></i>
           @endif
         </a>
         <div>

@@ -5,7 +5,7 @@
         @if ( isset($user->image))
           <img src="{{  asset('storage/images/'. $user->image) }}" >
         @else
-          <i class="fas fa-user-circle fa-3x"></i>
+          <i class="fas fa-user-circle fa-3x pb-1 "></i>
         @endif
       </a>
       @if (Auth::id() !== $user->id )

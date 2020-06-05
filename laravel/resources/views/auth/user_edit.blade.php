@@ -21,6 +21,9 @@
                 <label>サムネイル画像</label>
                 <input type="file" name="image" class="form-control-file">
               </div>
+              <div class="form-group pt-2 mb-0">
+                初期画像に戻す  <input type="checkbox" name="noImage" value="true">
+              </div>
               <div class="form-group pt-3 mb-0">
                 <input type="submit" class="btn btn-primary mr-1" value="更新">
                 <input type="button" class="btn btn-primary ml-0" onclick="history.back()" value="編集をやめる">
