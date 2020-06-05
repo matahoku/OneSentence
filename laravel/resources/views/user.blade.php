@@ -2,7 +2,11 @@
   <div class="card-body">
     <div class="d-flex flex-row">
       <a href="#" class="text-dark">
-        <i class="fas fa-user-circle fa-3x"></i>
+        @if ( isset($user->image))
+          <img src="{{  asset('storage/images/'. $user->image) }}" >
+        @else
+          <i class="fas fa-user-circle fa-3x"></i>
+        @endif
       </a>
       @if (Auth::id() !== $user->id )
        <follow-button
@@ -23,7 +27,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
               <a class="dropdown-item" href="{{ route('user.edit', ['user' => $user]) }}">
-                <i class="fas fa-user-edit mr-1"></i>  ユーザー情報を編集する
+                <i class="fas fa-user-edit mr-1"></i>  ユーザー情報を追加する
               </a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $user->id }}">

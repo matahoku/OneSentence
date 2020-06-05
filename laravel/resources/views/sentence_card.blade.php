@@ -2,7 +2,11 @@
     <div class="card mt-3">
       <div class="card-body d-flex flex-row pb-0">
         <a href="{{ route('users.show', ['id' => $sentence->user->id]) }}" class="text-dark">
-          <i class="fas fa-user-circle fa-3x mr-1 mb-4"></i>
+          @if ( isset($sentence->user->image))
+            <img src="{{ asset('storage/images/'. $sentence->user->image) }}" class="pr-2 pt-1">
+          @else
+            <i class="fas fa-user-circle fa-3x"></i>
+          @endif
         </a>
         <div>
           <div class="font-weight-bold">
