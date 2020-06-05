@@ -8,7 +8,7 @@
     <ul class="nav nav-tabs nav-justified mt-3">
       <li class="nav-item">
         <a href="{{ route('users.show', ['id' => $user->id]) }}" class="nav-link text-muted active">
-          全ての記事
+          全ての投稿
         </a>
       </li>
       <li class="nav-item">

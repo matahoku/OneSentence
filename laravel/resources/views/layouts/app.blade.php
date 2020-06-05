@@ -67,14 +67,15 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                  <a class="dropdown-item" href="{{ route('home', ['id' => Auth::id()])}}">
-                                      マイページへ
+                                  <a class="dropdown-item text-center" href="{{ route('home', ['id' => Auth::id()])}}">
+                                      <i class="fas fa-users"></i>   マイページへ
                                   </a>
+                                  <div class="dropdown-divider"></div>
 
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item text-center" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('ログアウト') }}
+                                                     <i class="fas fa-sign-out-alt"></i>   ログアウト
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

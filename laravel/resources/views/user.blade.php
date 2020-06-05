@@ -1,9 +1,9 @@
 <div class="card mt-3">
-  <div class="card-body">
+  <div class="card-body pb-2">
     <div class="d-flex flex-row">
       <a href="#" class="text-dark">
         @if ( isset($user->image))
-          <img src="{{  asset('storage/images/'. $user->image) }}" >
+          <img src="{{  asset('storage/images/'. $user->image) }}" class="pb-2" >
         @else
           <i class="fas fa-user-circle fa-3x pb-1 "></i>
         @endif
@@ -26,6 +26,10 @@
               </button>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
+              <a href="{{ route('create') }}" class="dropdown-item">
+                <i class="fas fa-edit mr-1"></i>  記事を投稿する
+              </a>
+              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{{ route('user.edit', ['user' => $user]) }}">
                 <i class="fas fa-user-edit mr-1"></i>  ユーザー情報を追加する
               </a>
@@ -72,7 +76,7 @@
       {{ $user->introduction }}
     </div>
   </div>
-  <div class="card-body">
+  <div class="card-body pt-3 pb-2">
     <div class="card-text">
       <a href="{{ route('users.followings', ['id' => $user->id]) }}" class="text-muted">
         {{ $user->count_followings }} フォロー
