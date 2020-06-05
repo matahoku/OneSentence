@@ -9,7 +9,7 @@
         <div class="card">
           <div class="card-header text-center">ユーザー情報編集</div>
           <div class="card-body">
-            <form action="{{ route('user.update', ['user' => $user]) }}" method="post">
+            <form action="{{ route('user.update', ['user' => $user]) }}" method="post" enctype="multipart/form-data">
               @csrf
               @method('PATCH')
               @include('error_show')
@@ -19,7 +19,7 @@
               </div>
               <div class="form-gropu">
                 <label>サムネイル画像</label>
-                <input type="file" name="image" value="" class="form-control-file">
+                <input type="file" name="image" class="form-control-file">
               </div>
               <div class="form-group pt-3 mb-0">
                 <input type="submit" class="btn btn-primary mr-1" value="更新">
