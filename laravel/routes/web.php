@@ -8,8 +8,10 @@ Route::prefix('user')->name('user.')->group(function(){
 });
 
 //ゲストユーザーでもOK
-Route::get('/','TopController@index')->name('/');
-Route::get('/tag/{name}','TopController@tagShow')->name('tag');
+Route::get('/', 'TopController@index')->name('/');
+Route::get('/description', 'TopController@description')->name('description');
+Route::post('/search', 'TopController@search')->name('search');
+Route::get('/tag/{name}', 'TopController@tagShow')->name('tag');
 Route::prefix('users')->name('users.')->group(function() {
     Route::get('/{id}', 'TopController@show')->name('show');
     Route::get('/{id}/likes', 'TopController@likes')->name('likes');

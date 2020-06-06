@@ -55,4 +55,15 @@ class TopController extends Controller
       $tag = Tag::where('name',$name)->first();
       return view('tagShow', ['tag' => $tag]);
     }
+
+    public function description()
+    {
+      return view('description');
+    }
+
+    public function search(Request $request)
+    {
+      $searchResults = Sentence::where('title', 'like', '%' . $request->search . '%')->orderBy('created_at', 'DESC')->get();
+      return view('search', ['search' =>$request->search, 'searchResults' => $searchResults]);
+    }
 }

@@ -23,6 +23,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('starability-minified/starability-all.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/search.css') }}">
 </head>
 <body>
     <div id="app">
@@ -45,7 +46,7 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a class="nav-link" href="">アプリについて</a>
+                            <a class="nav-link" href="{{ route('description') }}">アプリについて</a>
                         </li>
                         @guest
                             <li class="nav-item">
@@ -88,7 +89,25 @@
                 </div>
             </div>
         </nav>
-
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <div class="">
+              <form class="form-inline" action="{{ route('search') }}" method="post">
+                @csrf
+                <input class="form-control mr-sm-1" name="search" type="search" placeholder="タイトル検索" style="width:250px;">
+                <button class="btn btn-primary ml-0" type="submit">検索</button>
+              </form>
+            </div>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="レスポンシブ・ナビゲーションバー">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="Navber">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
         <main class="py-4">
             @yield('content')
         </main>
