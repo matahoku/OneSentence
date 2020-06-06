@@ -4,8 +4,16 @@
 
 @section('content')
   <div class="container">
+    <div class="card mb-3">
+      <div class="card-body pb-1">
+        <h2 class="h4 card-title m-0 text-center">レビュー投稿ページ</h2>
+        <p class="text-center pt-2"> 作品のタイトル(映画、ドラマ、アニメ等)を記入し、その感想を一文で記入して下さい。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
     <div class="col-md-0">
-      <h1>レビュー投稿ページ</h1>
       <form action="{{ route('store') }}" method="post">
         @csrf
         <div class="card">

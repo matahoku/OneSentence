@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('starability-minified/starability-all.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/search.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbtn.css') }}">
 </head>
 <body>
     <div id="app">
@@ -89,7 +90,7 @@
                 </div>
             </div>
         </nav>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" >
           <div class="container">
             <div class="">
               <form class="form-inline" action="{{ route('search') }}" method="post">
@@ -101,10 +102,12 @@
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="レスポンシブ・ナビゲーションバー">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="Navber">
-              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li></li>
-              </ul>
+            <div class="collapse navbar-collapse justify-content-end" id="Navber">
+                @guest
+                <a href="{{ route('login') }}" class="btn-gradient-3d-simple" style="text-decoration:none;">マイページ</a>
+                @else
+                <a href="{{ route('home', ['id' => Auth::id()])}}" class="btn-gradient-3d-simple" style="text-decoration:none;">マイページ</a>
+                @endguest
             </div>
           </div>
         </nav>
