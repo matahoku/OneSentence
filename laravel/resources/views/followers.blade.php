@@ -4,6 +4,15 @@
 
 @section('content')
 <div class="container">
+  <div class="Headline mt-1">
+    @if (Auth::id() == $user->id)
+    マイページ
+    @else
+    ユーザーページ
+    @endif
+  </div>
+</div>
+<div class="container">
   @include('user')
   <ul class="nav nav-tabs nav-justified mt-3">
     <li class="nav-item">

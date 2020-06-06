@@ -1,13 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container">
-    <div class="card mt-3">
-      <div class="card-body">
-        <h2 class="h4 card-title m-0 text-center">『 {{ $search }}  』の検索結果</h2>
-        <div class="card-text text-right">
-          {{ $searchResults->count() }}件
-        </div>
+    <div class="container">
+      <h3 class="Headline mt-1 mb-0 text-center">
+        『 {{ $search }}  』の検索結果
+      </h3>
+      <div class="text-right">
+        <small>ヒット数：{{ $searchResults->count() }}件</small>
       </div>
     </div>
     @foreach($searchResults as $sentence)

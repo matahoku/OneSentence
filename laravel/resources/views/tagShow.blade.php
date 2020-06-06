@@ -3,13 +3,12 @@
 @section('title', $tag->hashtag)
 
 @section('content')
-  <div class="container">
-    <div class="card mt-3">
-      <div class="card-body">
-        <h2 class="h4 card-title m-0 text-center">『 {{ $tag->hashtag }} 』の記事一覧</h2>
-        <div class="card-text text-right">
-          {{ $tag->sentences->count() }}件
-        </div>
+    <div class="container">
+      <h3 class="Headline mt-1 mb-0 text-center">
+        『 {{ $tag->hashtag }} 』の記事一覧
+      </h3>
+      <div class="text-right">
+        <small>ヒット数：{{ $tag->sentences->count() }}件</small>
       </div>
     </div>
     @foreach($tag->sentences as $sentence)

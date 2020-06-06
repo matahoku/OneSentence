@@ -4,14 +4,10 @@
 
 @section('content')
   <div class="container">
-    <div class="card mb-3">
-      <div class="card-body pb-1">
-        <h2 class="h4 card-title m-0 text-center">レビュー編集ページ</h2>
-        <p class="text-center pt-2">注意：更新ボタンを押すまで、編集は確定されません。 </p>
-      </div>
-    </div>
+    <h3 class="Headline mt-1 mb-4 text-center">
+      レビュー編集ページ
+    </h3>
   </div>
-
   <div class=" container">
     <div class="col-md-0">
       <form action="{{ route('update', ['sentence' => $sentence]) }}" method="post">
