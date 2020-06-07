@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{ asset('css/search.css') }}">
     <link rel="stylesheet" href="{{ asset('css/navbtn.css') }}">
     <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font.css') }}">
 </head>
 <body>
     <div id="app">
@@ -91,7 +92,7 @@
                 </div>
             </div>
         </nav>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+        <nav class="navbar navbar-expand-lg navbar-light bg-light p-1" >
           <div class="container">
             <div class="">
               <form class="form-inline" action="{{ route('search') }}" method="post">

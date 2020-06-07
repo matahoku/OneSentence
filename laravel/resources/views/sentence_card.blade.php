@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="card mt-3">
+    <div class="card mt-3 ">
       <div class="card-body d-flex flex-row pb-0">
         <a href="{{ route('users.show', ['id' => $sentence->user->id]) }}" class="text-dark">
           @if ( isset($sentence->user->image))
