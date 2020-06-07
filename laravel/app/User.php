@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Notifications\CustomResetPassword;
 
 
 class User extends Authenticatable
@@ -39,6 +40,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+    * パスワード再設定メールの送信
+    *
+    * @param  string  $token
+    * @return void
+    */
+   public function sendPasswordResetNotification($token)
+   {
+       $this->notify(new CustomResetPassword($token));
+   }
 
     public function sentences(): HasMany
     {
@@ -76,5 +88,7 @@ class User extends Authenticatable
     {
         return $this->followings->count();
     }
+
+
 
 }
