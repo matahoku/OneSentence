@@ -3,12 +3,17 @@
 @section('title', 'ユーザー情報編集')
 
 @section('content')
+<div class="container">
+  <h3 class="Headline mt-1 mb-4 text-center">
+    ユーザー情報編集
+  </h3>
+</div>
+
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
-          <div class="card-header text-center">ユーザー情報編集</div>
-          <div class="card-body">
+          <div class="card-body p-4">
             <form action="{{ route('user.update', ['user' => $user]) }}" method="post" enctype="multipart/form-data">
               @csrf
               @method('PATCH')
