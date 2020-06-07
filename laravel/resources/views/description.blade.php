@@ -35,5 +35,43 @@
       現状、シンプル イズ ベストな構成になっていますが、今後良いアイデアが浮かんだら拡張していくかもしれません...。<br>
       <a href="http://my-cinema-review.com">『Myシネマレビュー』へのリンク</a>
     </p>
+
+    <h3 class="Headline">お問い合わせ</h3>
+    <p class="pt-2">
+      ご意見・ご要望などがございましたら、お気軽にお問い合わせください。<br>
+      ※お返事にはお時間をいただく場合がございます。予めご了承いただきますようお願いいたします。<br>
+      ※メールアドレスは間違いのないようご記入下さい。間違っていた場合は回答することが困難になります。
+    </p>
+      <form action="index.html" method="post">
+        @csrf
+        <div class="card" id='contact'>
+          <div class="card-body p-4">
+            @include('error_show')
+            @if (session('flash_message'))
+            <div class="flash_message alert alert-success text-center py-3 my-0 mb30">
+              {{ session('flash_message') }}
+            </div>
+            @endif
+            <div class="form-group">
+              <label>お名前</label>
+              <input type="text" name="name" class="form-control" value="{{ old('name') }}">
+            </div>
+            <div class="form-group">
+              <label>メールアドレス</label>
+              <input type="text" name="email" class="form-control" value="{{ old('email') }}">
+            </div>
+            <div class="form-group">
+              <label>お問い合わせ内容</label>
+              <textarea name="body" rows="8" cols="80" class="form-control" value="{{ old('body') }}"></textarea>
+            </div>
+            <div class="form-group mb-0">
+              <label>内容をご確認のうえ送信ボタンをクリックしてください</label>
+              <button type="submit" class="btn btn-block btn-primary">
+                送信
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
   </div>
 @endsection

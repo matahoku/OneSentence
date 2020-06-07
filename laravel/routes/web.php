@@ -7,6 +7,9 @@ Route::prefix('user')->name('user.')->group(function(){
   Route::patch('/edit/{user}/update','UserController@update')->name('update');
 });
 
+//お問い合わせフォーム メール送信
+Route::post('/contact', 'ContactController@contact')->name('contact');
+
 //ゲストユーザーでもOK
 Route::get('/', 'TopController@index')->name('/');
 Route::get('/description', 'TopController@description')->name('description');
