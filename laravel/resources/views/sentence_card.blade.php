@@ -10,7 +10,7 @@
         </a>
         <div>
           <div class="font-weight-bold">
-            <a href="{{ route('users.show', ['id' => $sentence->user->id]) }}" class="text-dark">
+            <a href="{{ route('users.show', ['id' => $sentence->user->id]) }}" class="text-dark h6">
               {{ $sentence->user->name }}
             </a>
           </div>
@@ -79,7 +79,7 @@
 
       </div>
       <div class="card-body pt-0 pb-2">
-        <div class=" h5">
+        <div class=" h5 ">
         『  {{ $sentence->title }} 』  {{ $sentence->body }}
         </div>
       </div>
