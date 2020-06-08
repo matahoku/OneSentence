@@ -71,13 +71,13 @@ class HomeController extends Controller
             $sentence->tags()->attach($tag);
         });
 
-        return redirect('/');
+        return redirect()->route('home',['id' => $sentence->user->id]);
     }
 
     public function delete(Sentence $sentence)
     {
         $sentence->delete();
-        return redirect('/');
+        return redirect()->route('home',['id' => $sentence->user->id]);
     }
 
     public function like(Request $request, Sentence $sentence)
