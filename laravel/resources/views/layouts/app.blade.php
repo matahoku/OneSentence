@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="{{ asset('css/navbtn.css') }}">
     <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+
 </head>
 <body>
     <div id="app">
@@ -50,6 +51,9 @@
                         <!-- Authentication Links -->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('description') }}">アプリについて</a>
+                        </li>
+                        <li  class="nav-item">
+                            <a class="nav-link" href="{{ route('/') }}">全てのレビュー</a>
                         </li>
                         @guest
                             <li class="nav-item">
