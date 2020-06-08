@@ -5,7 +5,7 @@
 @section('content')
   <div class="container">
     <div class="Headline mt-1">
-      レビュー
+      全てのレビュー
     </div>
   </div>
   @foreach($sentences as $sentence)

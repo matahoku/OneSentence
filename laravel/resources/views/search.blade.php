@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', $search)
+
 @section('content')
     <div class="container">
       <h3 class="Headline mt-1 mb-0 text-center">

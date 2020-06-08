@@ -42,7 +42,7 @@
       ※お返事にはお時間をいただく場合がございます。予めご了承いただきますようお願いいたします。<br>
       ※メールアドレスは間違いのないようご記入下さい。間違っていた場合は回答することが困難になります。
     </p>
-      <form action="index.html" method="post">
+      <form action="{{ route('contact') }}" method="post">
         @csrf
         <div class="card" id='contact'>
           <div class="card-body p-4">

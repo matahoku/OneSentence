@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title','パスワード再設定')
+
 @section('content')
 <div class="container">
   <h3 class="Headline mt-1 mb-4 text-center">
