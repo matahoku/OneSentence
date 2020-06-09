@@ -1,7 +1,7 @@
 # ワンセンテンス・レビュー
 
 ## デモ
-
+![demo](https://raw.github.com/wiki/matahoku/OneSentence/images/one.gif)
 
 ## 概要
 
