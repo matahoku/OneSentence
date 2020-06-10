@@ -46,7 +46,7 @@ VueTagsInput (タグ） <br>
 
 ## リリース
 ワンセンテンス・レビューへのリンク　https://one-sentence-review.herokuapp.com  <br>
-会員ページ体験用仮ログイン　<br>
+会員ページ体験用仮ログイン アドレス： dummyuser@aaa  パス： dummyuser　<br>
 
 ※本番環境での本格的な運用は考えていません。その為、 <br> 
 無料小容量DBの使用(clearMysql)。 <br>
