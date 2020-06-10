@@ -1,3 +1,4 @@
+<div class="container">
 <div class="card mt-3">
   <div class="card-body">
     <div class="d-flex flex-row">
@@ -27,4 +28,6 @@
       </div>
     </h2>
   </div>
+</div>
+</div>
 </div>
