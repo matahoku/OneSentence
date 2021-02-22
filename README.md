@@ -43,15 +43,3 @@ VueTagsInput (タグ） <br>
 いいね機能 (Vue.js) <br>
 フォロー機能 （Vue.js） <br>
 タグ登録機能 （Vue.js) <br>
-
-## リリース
-ワンセンテンス・レビューへのリンク　https://one-sentence-review.herokuapp.com  <br>
-会員ページ体験用仮ログイン アドレス： dummyuser@aaa   パス： dummyuser　<br>
-
-※本番環境での本格的な運用は考えていません。その為、 <br> 
-無料小容量DBの使用(clearMysql)。 <br>
-クラウドストレージ等未使用な為、画像保存及びサムネイル表示は不可となっています。
-
-
-
-
